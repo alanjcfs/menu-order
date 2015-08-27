@@ -6,6 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('menu');
+  this.route('item');
+  this.route('food-store');
 });
 
 export default Router;

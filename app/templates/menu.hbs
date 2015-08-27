@@ -1,9 +1,25 @@
 {{outlet}}
-{{#each model as |menu|}}
-<div class="menu-table">
-{{menu.offerDate}}
-{{#each menu.items as |item|}}
-{{item.content}} {{item.price}}
-{{/each}}
-</div>
-{{/each}}
+<table class="menu-table">
+  {{#each model as |menu|}}
+  <tbody>
+    <tr>
+      <td colspan=3>
+        {{link-to menu.offerDate 'menu.show' menu.id}}
+      </td>
+    </tr>
+    {{#each menu.items as |item|}}
+    <tr>
+      <td>
+        {{item.content}}
+      </td>
+      <td>
+        {{item.price}}
+      </td>
+      <td>
+        {{purchase-order item=item action="buyNow"}}
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+  {{/each}}
+</table>

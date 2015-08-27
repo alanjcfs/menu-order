@@ -1,1 +1,9 @@
 {{outlet}}
+{{#each model as |menu|}}
+<div class="menu-table">
+{{menu.offerDate}}
+{{#each menu.items as |item|}}
+{{item.content}} {{item.price}}
+{{/each}}
+</div>
+{{/each}}
